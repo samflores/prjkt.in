@@ -1,0 +1,12 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Save' %>
+<% end %>

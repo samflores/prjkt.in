@@ -10,4 +10,12 @@ describe 'projects routing' do
     { :get => '/projects/42' }.should route_to(:controller => 'projects', :action => 'show', :id => '42')
   end 
 
+  it 'should route to project creation form' do
+    { :get => '/projects/new' }.should route_to(:controller => 'projects', :action => 'new')
+  end
+
+  it 'should route to project creation' do
+    { :post => '/projects' }.should route_to(:controller => 'projects', :action => 'create')
+  end
+
 end
