@@ -1,0 +1,8 @@
+<% if @projects.empty? %>
+  No projects yet. Create one now
+<% else %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><%= project.name %></li>
+    <% end %>
+<% end %>
