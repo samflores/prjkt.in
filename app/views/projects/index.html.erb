@@ -1,10 +1,12 @@
 <% if @projects.empty? %>
-  No projects yet. Create one now
+  No projects yet. Create one <%= link_to 'now', new_project_path %>
 <% else %>
   <ul>
     <% @projects.each do |project| %>
-      <li><%= project.name %></li>
+      <li><%= link_to project.name, project %></li>
     <% end %>
   </ul>
   <%= will_paginate @projects %>
+
+  <%= link_to 'New Project', new_project_path %>
 <% end %>
