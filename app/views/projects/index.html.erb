@@ -3,7 +3,7 @@
 <% else %>
   <ul>
     <% @projects.each do |project| %>
-      <li><%= link_to project.name, project %></li>
+      <li><%= link_to project.name, project %>(<%= pluralize(project.tasks.length, 'task') %>)</li>
     <% end %>
   </ul>
   <%= will_paginate @projects %>

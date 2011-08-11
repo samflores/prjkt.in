@@ -1,0 +1,13 @@
+require File.expand_path(File.dirname(__FILE__)) + '/../spec_helper'
+
+feature 'Add task to project' do
+  scenario 'with valid attributes' do 
+    project = Project.create(:name => 'Mega Project')
+    visit "/projects/#{project.id}"
+    fill_in 'Task', :with => 'Sketch the world domination plan'
+    fill_in 'Due date', :with => '2012-12-21'
+    click_button 'Add Task'
+    page.should have_content('Task successufully added to project')
+    page.should have_content('Sketch the world domination plan')
+  end
+end

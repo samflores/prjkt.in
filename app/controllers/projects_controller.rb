@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @project.tasks.build
   end
 
   def new 
@@ -33,7 +34,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
-      flash[:notice] = 'Project successfully updated'
+      flash[:notice] = params[:adding_task] ? 'Task successufully added to project' : 'Project successfully updated'
       redirect_to @project
     else 
       flash[:notice] = 'Unable to update project'
