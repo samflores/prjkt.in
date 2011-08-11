@@ -69,7 +69,6 @@ describe ProjectsController do
   context 'PUT /projects/:id' do
     before do
       @project = mock_model(Project, :name => 'Boring Project Name', :id => 69)
-      # @project.stub(:save).and_return(true)
       @project.stub(:update_attributes).and_return(true)
       Project.stub(:find).and_return(@project)
     end

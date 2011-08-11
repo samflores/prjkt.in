@@ -8,13 +8,24 @@
   <% end %>
 </ul>
 <%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %>
+      <% end %>
+    </ul>
+  <% end %>
   <%= hidden_field_tag 'adding_task', '1' %>
   <%= f.fields_for :tasks do |t| %>
     <% if t.object.new_record? %>
+    <div>
       <%= t.label :title, 'Task' %>
       <%= t.text_field :title %>
+    </div>
+    <div>
       <%= t.label :due_date, 'Due date' %>
       <%= t.text_field :due_date %>
+    </div>
       <%= t.submit 'Add Task' %>
     <% end %>
   <% end %>

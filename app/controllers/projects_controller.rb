@@ -36,9 +36,14 @@ class ProjectsController < ApplicationController
     if @project.update_attributes(params[:project])
       flash[:notice] = params[:adding_task] ? 'Task successufully added to project' : 'Project successfully updated'
       redirect_to @project
-    else 
-      flash[:notice] = 'Unable to update project'
-      render :edit
+    else
+      unless params[:adding_task]
+        flash[:notice] = 'Unable to update project'
+        render :edit
+      else
+        flash[:notice] = 'Unable to add task to project'
+        render :show
+      end
     end
   end
 end
