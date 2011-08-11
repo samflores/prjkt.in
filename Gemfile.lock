@@ -67,6 +67,7 @@ GEM
       thor (~> 0.14)
     json_pure (1.5.3)
     kgio (2.6.0)
+    libnotify (0.5.7)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -160,6 +161,7 @@ DEPENDENCIES
   guard
   guard-rspec
   jquery-rails
+  libnotify
   rails (= 3.1.0.rc5)
   rb-inotify
   rspec-rails (~> 2.6)
