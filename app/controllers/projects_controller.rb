@@ -25,4 +25,19 @@ class ProjectsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(params[:project])
+      flash[:notice] = 'Project successfully updated'
+      redirect_to @project
+    else 
+      flash[:notice] = 'Unable to update project'
+      render :edit
+    end
+  end
 end

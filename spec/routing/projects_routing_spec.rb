@@ -18,4 +18,11 @@ describe 'projects routing' do
     { :post => '/projects' }.should route_to(:controller => 'projects', :action => 'create')
   end
 
+  it 'should route to project edit form' do
+    { :get => '/projects/42/edit' }.should route_to(:controller => 'projects', :action => 'edit', :id => '42')
+  end
+
+  it 'should route to project update' do
+    { :put => '/projects/42' }.should route_to(:controller => 'projects', :action => 'update', :id => '42')
+  end
 end
