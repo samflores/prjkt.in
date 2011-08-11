@@ -8,7 +8,7 @@ describe ProjectsController do
     end
 
     it 'should find existing projects' do
-      Project.should_receive(:all).and_return(@projs)
+      Project.should_receive(:paginate).and_return(@projs)
       get :index
     end
   end
