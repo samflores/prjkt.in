@@ -6,8 +6,10 @@
       <% end %>
     </ul>
   <% end %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
   <%= f.submit %>
   <%= link_to 'Cancel', projects_path %>
 <% end %>
