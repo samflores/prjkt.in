@@ -8,6 +8,10 @@ gem 'rails', '3.1.0.rc5'
 gem 'sqlite3'
 gem 'will_paginate', "~> 3.0"
 
+group :production do
+  gem 'pg'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -17,8 +21,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-gem 'unicorn'
 
 group :test do
   gem 'rspec-rails', '~> 2.6'
