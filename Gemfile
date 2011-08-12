@@ -25,7 +25,7 @@ group :test do
   gem 'capybara'
   gem 'guard'
   gem 'guard-rspec'
-  gem 'rb-inotify'
-  gem 'libnotify'
+  # gem 'rb-inotify'
+  # gem 'libnotify'
 end
 
