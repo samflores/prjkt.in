@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   rescue_from ActiveRecord::RecordNotFound do |exception|
     render 'not_found'
   end

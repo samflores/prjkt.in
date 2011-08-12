@@ -5,7 +5,7 @@ gem 'rails', '3.1.0.rc5'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-group :development do
+group :development, :test do
   gem 'sqlite3'
 end
 gem 'will_paginate', "~> 3.0"
@@ -24,13 +24,15 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'devise'
 
 group :test do
   gem 'rspec-rails', '~> 2.6'
   gem 'capybara'
   gem 'guard'
   gem 'guard-rspec'
-  # gem 'rb-inotify'
-  # gem 'libnotify'
+  gem 'rb-inotify'
+  gem 'libnotify'
+  gem 'launchy'
 end
 
