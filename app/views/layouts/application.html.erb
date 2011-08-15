@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Prjkt</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% if user_signed_in? %>
-  <%= current_user.username %>(<%= link_to 'Logout', destroy_user_session_path, :method => 'delete'%>) 
-<% else %>
-  <%= link_to 'Login', new_user_session_path %>
-<% end %>
-<%= notice %>
-<%= alert %>
-<%= yield %>
-
-</body>
+  <head>
+    <title>Prjkt</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id='wrapper'>
+      <header>
+        <nav>
+          <ul>
+            <% if user_signed_in? %>
+              <li><%= current_user.username %>(<%= link_to 'Logout', destroy_user_session_path, :method => 'delete'%>)</li>
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Account', edit_user_registration_path %></li>
+            <% else %>
+              <% unless request.fullpath == new_user_session_path %>
+                <li><%= link_to 'Login', new_user_session_path %></li>
+              <% end %>
+            <% end %>
+          </ul>
+        </nav>
+      </header>
+      <aside class='notice'>
+        <%= notice %>
+      </aside>
+      <aside class='alert'>
+        <%= alert %>
+      </aside>
+      <div class='main'>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
 </html>

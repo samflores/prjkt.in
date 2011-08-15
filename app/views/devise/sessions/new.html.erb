@@ -1,13 +1,14 @@
-<h2>Sign in</h2>
+<div id='login'>
+  <h2>Sign in</h2>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :username %><br />
-  <%= f.text_field :username %></p>
-
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
-
-  <p><%= f.submit "Sign in" %></p>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <div class='fields'>
+      <%= f.text_field :username, :placeholder => 'Username' %>
+      <%= f.password_field :password, :placeholder => 'Password' %>
+    </div>
+    <div class='controls'>
+      <%= f.submit "Sign in" %>
+      <%= render :partial => "devise/shared/links" %>
+    </div>
+  <% end %>
+</div>

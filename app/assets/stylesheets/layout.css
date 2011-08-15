@@ -1,0 +1,83 @@
+
+div.field_with_errors {
+  display: inline;
+}
+
+body {
+  background: white url("/assets/bright_squares.png") top left repeat;
+}
+
+input {
+  outline: none;
+}
+
+#wrapper {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#wrapper > header {
+}
+
+.main {
+}
+
+#login {
+  width: 380px;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f7fa), to(#dbdcde));
+  border-top: thin solid white;
+  -webkit-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
+  -webkit-border-radius: 3px;
+}
+
+#login h2 {
+  font-size: 1.0em;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: thin solid rgba(0,0,0,0.1);
+}
+
+#login form {
+  margin: 0;
+  padding: 0;
+  border-top: thin solid rgba(255,255,255,0.4);
+}
+
+#login .fields {
+  border-bottom: thin solid rgba(0,0,0,0.1);
+  padding: 25px 45px;
+}
+
+#login .controls {
+  border-top: thin solid rgba(255,255,255,0.4);
+  padding: 20px 45px;
+}
+
+#login input[type=text], #login input[type=password] {
+  display: block;
+  height: 2.5em;
+  width: 290px; 
+  margin: 0 auto;
+  border: thin solid rgba(0,0,0,0.2);
+  -webkit-border-radius: 3px;
+     -mox-border-radius: 3px;
+       -o-border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 0 2px rgba(0,0,0,0.1);
+}
+
+#login input[type=text] {
+  margin-bottom: 6px;
+}
+
+#login input[type=submit] {
+  float: right;
+  padding: 10px 24px;
+  border: thin solid #fcfcfc;
+  -webkit-border-radius: 3px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f7fa), to(#dbdcde));
+  -webkit-box-shadow: 0px 0px 0 3px rgba(0,0,0,0.1);
+
+}

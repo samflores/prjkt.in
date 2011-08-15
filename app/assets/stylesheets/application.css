@@ -4,7 +4,5 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree . 
+ *= require layout
 */
-div.field_with_errors {
-  display: inline;
-}
