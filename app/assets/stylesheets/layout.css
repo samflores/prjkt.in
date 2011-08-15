@@ -68,6 +68,11 @@ input {
   -webkit-box-shadow: 0px 0px 0 2px rgba(0,0,0,0.1);
 }
 
+#login input[type=text]:focus, #login input[type=password]:focus {
+  border: thin solid rgba(110,82,124,1);
+  -webkit-box-shadow: 0px 0px 0 2px rgba(157, 117, 177, 1);
+}
+
 #login input[type=text] {
   margin-bottom: 6px;
 }
