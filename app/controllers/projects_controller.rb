@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
-      flash[:notice] = params[:adding_task] ? 'Task successufully added to project' : 'Project successfully updated'
+      flash[:notice] = params[:adding_task] ? 'Task successfully added to project' : 'Project successfully updated'
       redirect_to @project
     else
       unless params[:adding_task]
