@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails', '3.1.0.rc6'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -14,6 +14,8 @@ group :production do
   gem 'pg'
   gem 'thin'
 end
+
+gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.

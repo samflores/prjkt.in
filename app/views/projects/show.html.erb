@@ -1,33 +1,32 @@
 <h1><%= @project.name %></h1>
 <%= link_to 'Edit', edit_project_path(@project) %>
-<ul>
-  <% @project.tasks.reject(&:new_record?).each do |task| %>
-    <li>
-      <%= task.title %>
-    </li>
-  <% end %>
-</ul>
 <%= form_for(@project) do |f| %>
   <% if @project.errors.any? %>
     <ul>
       <% @project.errors.full_messages.each do |msg| %>
-        <li><%= msg %>
+        <li><%= msg %></li>
       <% end %>
     </ul>
   <% end %>
   <%= hidden_field_tag 'adding_task', '1' %>
   <%= f.fields_for :tasks do |t| %>
-    <% if t.object.new_record? %>
-    <div>
-      <%= t.label :title, 'Task' %>
-      <%= t.text_field :title %>
-    </div>
-    <div>
-      <%= t.label :due_date, 'Due date' %>
-      <%= t.text_field :due_date %>
-    </div>
-      <%= t.submit 'Add Task' %>
-    <% end %>
+    <ul>
+      <% if t.object.new_record? %>
+        <li class='new_task'>
+          <%= t.check_box :done, :disabled => true %>
+          <%= t.label :title, 'Task' %>
+          <%= t.text_field :title, :placeholder => 'Task title' %>
+          <%= t.label :due_date, 'Due date' %>
+          <%= t.text_field :due_date, :placeholder => 'Due date' %>
+          <%= t.submit 'Add Task' %>
+        </li>
+      <% else %>
+        <li>
+        <%= t.check_box :done %>
+        <%= t.label :done, t.object.title %>
+        </li>
+      <% end %>
+    </ul>
   <% end %>
 <% end %>
 <%= link_to 'Back', projects_path %>
