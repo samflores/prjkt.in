@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params[:project])
+    @project = Project.new(params[:project].merge(:owner => current_user))
     if @project.save
       flash[:notice] = 'Project successfully saved'
       redirect_to @project

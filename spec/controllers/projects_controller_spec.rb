@@ -58,7 +58,7 @@ describe ProjectsController do
       end
 
       it 'should create a new project with the specified attributes' do
-        Project.should_receive(:new).with('name' => 'Other Project').and_return(@project)
+        Project.should_receive(:new).with('name' => 'Other Project', 'owner' => @user).and_return(@project)
         post :create, :project => { :name => 'Other Project' }
       end
 

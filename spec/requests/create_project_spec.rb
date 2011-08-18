@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__)) + '/../spec_helper'
 feature 'Create new Project' do
   context ', when logged in as "user",' do
     before do
-      user = User.create!(:username => 'user', :email => 'manager@server.com', :password => 'sekret', :password_confirmation => 'sekret')
+      @user = User.create!(:username => 'user', :email => 'manager@server.com', :password => 'sekret', :password_confirmation => 'sekret')
       visit '/users/sign_in'
       fill_in 'Username', :with => 'user'
       fill_in 'Password', :with => 'sekret'
