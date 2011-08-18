@@ -5,7 +5,7 @@
       created by <%= @project.owner.username %>, <%= @project.created_at %>
     </div>
     <div>
-      <%= pluralize @project.tasks.count(:conditions => '"tasks"."done" IS TRUE'), 'tasks' %> done
+      <%= pluralize @project.tasks.count(:conditions => {:done => true}), 'tasks' %> done
     </div>
     <%= link_to 'Edit', edit_project_path(@project) %>
     <%= link_to 'Back', projects_path %>

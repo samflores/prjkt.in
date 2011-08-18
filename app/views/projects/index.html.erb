@@ -7,7 +7,7 @@
       <% if project.tasks.count == 0 %>
         (no tasks)
       <% else %>
-        (<%= project.tasks.count :conditions => '"tasks"."done" IS TRUE' %>/<%= pluralize(project.tasks.count, 'task') %>)</li>
+        (<%= project.tasks.count :conditions => {:done => true} %>/<%= pluralize(project.tasks.count, 'task') %>)</li>
       <% end %>
     <% end %>
   </ul>
