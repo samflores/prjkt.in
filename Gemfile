@@ -15,6 +15,7 @@ group :production do
   gem 'thin'
 end
 
+gem 'heroku'
 gem 'unicorn'
 
 # Gems used only for assets and not required
@@ -33,8 +34,8 @@ group :test do
   gem 'capybara'
   gem 'guard'
   gem 'guard-rspec'
-  gem 'rb-inotify'
-  gem 'libnotify'
-  gem 'launchy'
+#  gem 'rb-inotify'
+#  gem 'libnotify'
+#  gem 'launchy'
 end
 
