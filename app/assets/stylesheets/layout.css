@@ -13,6 +13,7 @@ input {
 
 #wrapper {
   width: 800px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 
@@ -45,9 +46,15 @@ header nav ul li {
   width: 380px;
   margin: 0 auto;
   background: -webkit-gradient(linear, left top, left bottom, from(#f9f7fa), to(#dbdcde));
+  background: -moz-linear-gradient(-90deg, #f9f7fa, #dbdcde);
+  background: -o-linear-gradient(-90deg, #f9f7fa, #dbdcde);
   border-top: thin solid white;
   -webkit-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
+       -o-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
   -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+       -o-border-radius: 3px;
 }
 
 #login h2 {
@@ -82,14 +89,18 @@ header nav ul li {
   margin: 0 auto;
   border: thin solid rgba(0,0,0,0.2);
   -webkit-border-radius: 3px;
-     -mox-border-radius: 3px;
+     -moz-border-radius: 3px;
        -o-border-radius: 3px;
   -webkit-box-shadow: 0px 0px 0 2px rgba(0,0,0,0.1);
+     -moz-box-shadow: 0px 0px 0 2px rgba(0,0,0,0.1);
+       -o-box-shadow: 0px 0px 0 2px rgba(0,0,0,0.1);
 }
 
 #login input[type=text]:focus, #login input[type=password]:focus {
   border: thin solid rgba(110,82,124,1);
   -webkit-box-shadow: 0px 0px 0 2px rgba(157, 117, 177, 1);
+     -moz-box-shadow: 0px 0px 0 2px rgba(157, 117, 177, 1);
+       -o-box-shadow: 0px 0px 0 2px rgba(157, 117, 177, 1);
 }
 
 #login input[type=text] {
@@ -102,8 +113,42 @@ header nav ul li {
   padding: 10px 24px;
   border: thin solid #fcfcfc;
   -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+       -o-border-radius: 3px;
   text-shadow: 0 1px 0 rgba(255,255,255,1);
   background: -webkit-gradient(linear, left top, left bottom, from(#f9f7fa), to(#dbdcde));
+  background: -moz-linear-gradient(-90deg, #f9f7fa, #dbdcde);
   -webkit-box-shadow: 0px 0px 0 3px rgba(0,0,0,0.1);
+     -moz-box-shadow: 0px 0px 0 3px rgba(0,0,0,0.1);
+       -o-box-shadow: 0px 0px 0 3px rgba(0,0,0,0.1);
 }
 
+section.project {
+  background: #fff;
+}
+
+section.project h1 {
+  display: block;
+  padding: 0 0 0 20px;
+  margin: 0;
+  line-height: 70px;
+  font-size: 2em;
+  background: -moz-linear-gradient(-90deg, #f6f6f6, #e4e4e4);
+}
+
+section.project .actions {
+  float: left;
+  width: 360px;
+}
+
+section.project form {
+  float: right;
+  width: 420px;
+  background: #dfedee;
+}
+
+section.project:after {
+  content: '';
+  clear: both;
+  display: block;
+}

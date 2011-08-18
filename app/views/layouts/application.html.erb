@@ -23,12 +23,12 @@
           </ul>
         </nav>
       </header>
-      <aside class='notice'>
-        <%= notice %>
-      </aside>
-      <aside class='alert'>
-        <%= alert %>
-      </aside>
+      <% if notice %>
+        <aside class='notice'><%= notice %></aside>
+      <% end %>
+      <% if alert %>
+        <aside class='alert'><%= alert %></aside>
+      <% end %>
       <div class='main'>
         <%= yield %>
       </div>
