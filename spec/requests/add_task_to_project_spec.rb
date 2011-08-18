@@ -14,17 +14,17 @@ feature 'Add task to project' do
     visit "/projects/#{project.id}"
     fill_in 'Task', :with => 'Sketch the world domination plan'
     fill_in 'Due date', :with => '2012-12-21'
-    click_button 'Add Task'
-    page.should have_content('Task successfully added to project')
+    click_button 'Update Tasks'
+    page.should have_content('Project tasks successfully updated')
     page.should have_content('Sketch the world domination plan')
   end
   
-  scenario 'with invalid attributes' do
+  scenario 'with empty title' do
     project = Project.create(:name => 'Mega Project')
     visit "/projects/#{project.id}"
     fill_in 'Due date', :with => '2012-12-21'
-    click_button 'Add Task'
-    page.should have_content('Unable to add task to project')
-    page.should have_content('Tasks title can\'t be blank')
+    click_button 'Update Tasks'
+    page.should have_content('Project tasks successfully updated')
+    project.tasks.count.should == 0
   end
 end

@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__)) + '/../spec_helper'
 
-feature 'mark task as done', :js => true do
+feature 'mark task as done' do
   context '(logged in)' do
     background do
       User.create!(:username => 'user', :email => 'user@mail.com', :password => 'sekret', :password_confirmation => 'sekret')
@@ -16,6 +16,7 @@ feature 'mark task as done', :js => true do
     scenario 'default scenario' do
       visit "/projects/#{@project.id}"
       check 'Easy task'
+      click_button 'Update Tasks'
       page.should have_no_content('Easy task')
     end
   end

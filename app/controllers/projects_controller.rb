@@ -35,15 +35,20 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    if @project.update_attributes(params[:project])
-      flash[:notice] = params[:adding_task] ? 'Task successfully added to project' : 'Project successfully updated'
-      redirect_to @project
-    else
-      unless params[:adding_task]
-        flash[:notice] = 'Unable to update project'
-        render :edit
+    if not params[:adding_task]
+      if @project.update_attributes(params[:project])
+        flash[:notice] = 'Project successfully updated'
+        redirect_to @project
       else
-        flash[:notice] = 'Unable to add task to project'
+        flash[:alert] = 'Unable to update project'
+        render :edit
+      end
+    else
+      if @project.update_attributes(params[:project])
+        flash[:notice] = 'Project tasks successfully updated'
+        redirect_to @project
+      else
+        flash[:alert] = 'Unable to update project tasks'
         render :show
       end
     end
