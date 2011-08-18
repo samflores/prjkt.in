@@ -1,6 +1,15 @@
 <section class='project'>
   <h1><%= @project.name %></h1>
   <aside class='actions'>
+    <div>
+      Owner: <%= @project.owner.username %>
+    </div>
+    <div>
+      Tasks done: <%= @project.tasks.count(:conditions => '"tasks"."done" = "t"') %>
+    </div>
+    <div>
+      Created at: <%= @project.created_at %>
+    </div>
     <%= link_to 'Edit', edit_project_path(@project) %>
     <%= link_to 'Back', projects_path %>
   </aside>
@@ -16,17 +25,34 @@
     <ul>
       <%= f.fields_for :tasks do |t| %>
         <% if t.object.new_record? %>
-          <li class='new_task'>
+          <li class='new-task'>
             <%= t.check_box :done, :disabled => true %>
+            <div>
+            <span class='title'>
             <%= t.label :title, 'Task' %>
             <%= t.text_field :title, :placeholder => 'Task title' %>
+            </span>
+            <span class='due-date'>
             <%= t.label :due_date, 'Due date' %>
             <%= t.text_field :due_date, :placeholder => 'Due date' %>
+            </span>
+            </div>
           </li>
         <% elsif not t.object.done %>
-          <li>
+          <li class='task'>
           <%= t.check_box :done %>
-          <%= t.label :done, t.object.title %>
+          <div>
+            <span class='title'>
+            <%= t.label :done, t.object.title %>
+            </span>
+            <span class='due-date'>
+            <% if t.object.due_date %>
+              <%= t.object.due_date %>
+            <% else %>
+              no due date
+            <% end %>
+            </span>
+          </div>
           </li>
         <% end %>
       <% end %>

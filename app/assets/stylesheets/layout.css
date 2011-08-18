@@ -36,9 +36,12 @@ header nav ul li {
 }
 
 .main {
+  -webkit-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
+       -o-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
 }
 
-#login label, .edit_project .new_task label {
+#login label, .edit_project .new-task label {
   display: none;
 }
 
@@ -139,12 +142,53 @@ section.project h1 {
 section.project .actions {
   float: left;
   width: 360px;
+  padding: 10px 0 10px 10px;
 }
 
 section.project form {
   float: right;
   width: 420px;
   background: #dfedee;
+  padding: 10px 10px 10px 0;
+}
+section.project form ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+section.project form ul li {
+  height: 50px;
+  padding: 10px 15px;
+  border-bottom: thin solid rgba(0,0,0,0.1);
+  border-top: thin solid rgba(255,255,255,0.2);
+}
+
+.task {
+  position: relative;
+}
+
+.task div, .new-task div {
+  position: relative;
+  left: 30px;
+  top: -20px;
+}
+
+.task span, .new-task span {
+  display: block;
+}
+
+.task .title, .new-task .title  input {
+  font-weight: bold;
+}
+
+.task .due-date, .new-task .due-date {
+  font-style: italic;
+}
+
+.new-task input {
+  border-style: none;
+  background-color: transparent;
 }
 
 section.project:after {
