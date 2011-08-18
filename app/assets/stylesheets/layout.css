@@ -20,6 +20,24 @@ input {
 #wrapper > header {
   height: 80px;
   display: block;
+  margin-bottom: 2px;
+}
+
+#wrapper > header h1 {
+  padding-left: 20px;
+  float: left;
+  color: #888888;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+#wrapper > header h1 span {
+  color: #ff8888;
+}
+
+#wrapper > header:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 header nav ul {
@@ -35,10 +53,18 @@ header nav ul li {
   float: left;
 }
 
+header nav ul li:first-child {
+  padding-right: 10px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #888888;
+  border-left: thin solid #888888;
+  padding: 0 10px;
+}
+
 .main {
-  -webkit-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
-     -moz-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
-       -o-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
 }
 
 #login label, .edit_project .new-task label {
@@ -52,12 +78,12 @@ header nav ul li {
   background: -moz-linear-gradient(-90deg, #f9f7fa, #dbdcde);
   background: -o-linear-gradient(-90deg, #f9f7fa, #dbdcde);
   border-top: thin solid white;
-  -webkit-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
-     -moz-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
-       -o-box-shadow: 0 0 4px 0px rgba(0,0,0,0.3);
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-       -o-border-radius: 3px;
+  -webkit-box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
+       -o-box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+       -o-border-radius: 8px;
 }
 
 #login h2 {
@@ -110,7 +136,8 @@ header nav ul li {
   margin-bottom: 6px;
 }
 
-#login input[type=submit] {
+#login input[type=submit], .edit_project input[type=submit] {
+  cursor: pointer;
   float: right;
   color: #888888;
   padding: 10px 24px;
@@ -128,6 +155,13 @@ header nav ul li {
 
 section.project {
   background: #fff;
+  -webkit-border-radius: 8px;
+     -moz-border-radius-topleft: 8px;
+     -moz-border-radius-topright: 8px;
+       -o-border-radius: 8px;
+  -webkit-box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
+       -o-box-shadow: 0 0 4px 2px rgba(0,0,0,0.3);
 }
 
 section.project h1 {
@@ -137,6 +171,11 @@ section.project h1 {
   line-height: 70px;
   font-size: 2em;
   background: -moz-linear-gradient(-90deg, #f6f6f6, #e4e4e4);
+  border-bottom: thin solid rgba(0,0,0,0.1);
+  -webkit-border-radius: 8px;
+     -moz-border-radius-topleft: 8px;
+     -moz-border-radius-topright: 8px;
+       -o-border-radius: 8px;
 }
 
 section.project .actions {
@@ -149,7 +188,8 @@ section.project form {
   float: right;
   width: 420px;
   background: #dfedee;
-  padding: 10px 10px 10px 0;
+  padding: 0 0 10px 0;
+  border-left: thin solid rgba(0,0,0,0.1);
 }
 section.project form ul {
   list-style-type: none;
@@ -182,13 +222,18 @@ section.project form ul li {
   font-weight: bold;
 }
 
-.task .due-date, .new-task .due-date {
+.task .due-date, .new-task .due-date input {
   font-style: italic;
 }
 
 .new-task input {
   border-style: none;
   background-color: transparent;
+}
+
+.edit_project input[type=submit] {
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 section.project:after {

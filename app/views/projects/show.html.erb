@@ -2,13 +2,10 @@
   <h1><%= @project.name %></h1>
   <aside class='actions'>
     <div>
-      Owner: <%= @project.owner.username %>
+      created by <%= @project.owner.username %>, <%= @project.created_at %>
     </div>
     <div>
-      Tasks done: <%= @project.tasks.count(:conditions => '"tasks"."done" = "t"') %>
-    </div>
-    <div>
-      Created at: <%= @project.created_at %>
+      <%= pluralize @project.tasks.count(:conditions => '"tasks"."done" = "t"'), 'tasks' %> done
     </div>
     <%= link_to 'Edit', edit_project_path(@project) %>
     <%= link_to 'Back', projects_path %>
@@ -30,7 +27,7 @@
             <div>
             <span class='title'>
             <%= t.label :title, 'Task' %>
-            <%= t.text_field :title, :placeholder => 'Task title' %>
+            <%= t.text_field :title, :placeholder => 'Title of the new task' %>
             </span>
             <span class='due-date'>
             <%= t.label :due_date, 'Due date' %>

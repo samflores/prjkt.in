@@ -30,6 +30,7 @@ GEM
       activesupport (= 3.1.0.rc6)
     activesupport (3.1.0.rc6)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     arel (2.2.1)
     bcrypt-ruby (2.1.4)
     builder (3.0.0)
@@ -71,6 +72,10 @@ GEM
       thor (~> 0.14)
     json_pure (1.5.3)
     kgio (2.6.0)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
+    libnotify (0.5.7)
+      ffi (= 1.0.9)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -107,6 +112,8 @@ GEM
       thor (~> 0.14.6)
     raindrops (0.7.0)
     rake (0.9.2)
+    rb-inotify (0.8.6)
+      ffi (>= 0.5.0)
     rdoc (3.9.2)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
@@ -170,8 +177,11 @@ DEPENDENCIES
   guard
   guard-rspec
   jquery-rails
+  launchy
+  libnotify
   pg
   rails (= 3.1.0.rc6)
+  rb-inotify
   rspec-rails (~> 2.6)
   sass-rails (~> 3.1.0.rc)
   sqlite3
