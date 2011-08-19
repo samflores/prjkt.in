@@ -12,6 +12,23 @@ input {
   outline: none;
 }
 
+.notice, .alert {
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.notice {
+  background: rgba(183,215,151,0.3);
+  border: thin solid #86a16b;
+}
+
+.alert {
+  background: rgba(214,132,127,0.3);
+  border: thin solid #984b46;
+}
+
 #wrapper {
   width: 800px;
   padding: 0 10px;
@@ -196,7 +213,7 @@ section.project h1 {
        -o-border-radius: 8px;
 }
 
-section.project .actions {
+section.project .info {
   float: left;
   width: 360px;
   padding: 10px 0 10px 10px;

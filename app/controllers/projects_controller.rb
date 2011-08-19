@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
       flash[:notice] = 'Project successfully saved'
       redirect_to @project
     else
-      flash[:notice] = 'Unable to save project'
+      flash.now[:alert] = 'Unable to save project'
       render :new
     end
   end
@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
         flash[:notice] = 'Project successfully updated'
         redirect_to @project
       else
-        flash[:alert] = 'Unable to update project'
+        flash.now[:alert] = 'Unable to update project'
         render :edit
       end
     else
@@ -48,7 +48,7 @@ class ProjectsController < ApplicationController
         flash[:notice] = 'Project tasks successfully updated'
         redirect_to @project
       else
-        flash[:alert] = 'Unable to update project tasks'
+        flash.now[:alert] = 'Unable to update project tasks'
         render :show
       end
     end
